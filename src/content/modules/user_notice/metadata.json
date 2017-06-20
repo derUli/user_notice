@@ -4,6 +4,6 @@
 	"version" : "0.9.0",
 	"controllers" : {
 		"UserNotice" : "UserNotice.php"
-	}
+	},
 	"main_class" : "UserNotice"
-}
+},
