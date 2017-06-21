@@ -17,4 +17,17 @@ class UserNoticeData extends User {
 			$this->notice = null;
 		}
 	}
+	public function insert() {
+		parent::insert ();
+		$this->update ();
+	}
+	public function update() {
+		parent::update ();
+		$sql = "update {prefix}users set notice = ? where id = ?";
+		$args = array (
+				$this->getNotice (),
+				$this->getId () 
+		);
+		Database::pQuery ( $sql, $args, true );
+	}
 }
