@@ -8,5 +8,6 @@
 	"main_class" : "UserNotice",
 	"objects" : {
 		"UserNoticeData" : "objects/UserNoticeData.php"
-	}
-},
+	},
+   "custom_acl" : ["user_notice"]
+}
