@@ -11,8 +11,9 @@ if ($acl->hasPermission ( "user_notice" )) {
 	if (strlen ( $note ) > 0) {
 		echo $note;
 	}
-	?><br/>
-<p>
+	?><br />
+	<br />
+	<p>
 		[<a href="#"><?php translate("edit");?></a>]
 	</p>
 </div>
