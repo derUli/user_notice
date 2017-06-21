@@ -1,0 +1,1 @@
+alter table `{prefix}users` add `notice` mediumtext null;

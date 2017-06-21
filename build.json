@@ -3,5 +3,5 @@
    "version" : "0.9.0",
    "description" : "User Notice",
    "categories" : ["notice", "note", "memo", "organizer"],
-   "compatible_from" : "2017.4"
+   "compatible_from" : "2017.3.9"
 }

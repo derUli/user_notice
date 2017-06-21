@@ -1,0 +1,1 @@
+alter table `{prefix}users` drop column `notice`;
