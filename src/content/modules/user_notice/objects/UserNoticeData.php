@@ -5,12 +5,25 @@ class UserNoticeData extends User {
 	public function getNotice() {
 		return $this->notice;
 	}
+	public function loadById($id) {
+		parent::loadById ( $id );
+		$sql = "select notice from {prefix}users where id = ?";
+		// @Todo Notice Objekt laden
+	}
+	public function loadByUsername($name) {
+		parent::loadByUsername ( $name );
+		// @Todo Notice Objekt laden
+	}
 	public function setNotice($val) {
 		if (is_string ( $val )) {
 			$this->notice = StringHelper::IsNotNullOrEmpty ( trim ( $val ) ) ? strip_tags ( $val, self::allowableTags ) : null;
 		} else {
 			$this->notice = null;
 		}
+	}
+	// Notice aus Query in Klassenvariable schreiben
+	private function fillNoticeVar($query) {
+		throw new NotImplementedException ();
 	}
 	public function insert() {
 		parent::insert ();
