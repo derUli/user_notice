@@ -1,13 +1,13 @@
 <?php
 class UserNoticeDataTest extends PHPUnit_Framework_TestCase {
-	const originalString = "<p>test<script>alert('xss');</script></p>";
-	const filteredString = "<p>test</p>";
+	const originalString = "<p>test<script>alert('xss')</script></p>";
+	const filteredString = "<p>testalert('xss')</p>";
 	public function setUp() {
 		$sql = "update {prefix}users set notice = ? where notice = ? or notice = ?";
 		$args = array (
 				null,
 				self::originalString,
-				self::filteredString 
+				self::filteredString
 		);
 		Database::pQuery ( $sql, $args, true );
 	}
@@ -31,7 +31,7 @@ class UserNoticeDataTest extends PHPUnit_Framework_TestCase {
 		$user = new UserNoticeData ();
 		$user->loadByUsername ( "admin" );
 		$this->assertNull ( $user->getNotice () );
-		
+
 		$user->setNotice ( "test" );
 		$user->save ();
 		$user = new UserNoticeData ();
