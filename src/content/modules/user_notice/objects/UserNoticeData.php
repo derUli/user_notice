@@ -8,11 +8,20 @@ class UserNoticeData extends User {
 	public function loadById($id) {
 		parent::loadById ( $id );
 		$sql = "select notice from {prefix}users where id = ?";
-		// @Todo Notice Objekt laden
+		$args = array (
+				intval ( $id ) 
+		);
+		$query = Database::pQuery ( $sql, $args, true );
+		$this->fillNoticeVar ( $query );
 	}
 	public function loadByUsername($name) {
 		parent::loadByUsername ( $name );
-		// @Todo Notice Objekt laden
+		$sql = "select notice from {prefix}users where username = ?";
+		$args = array (
+				strval ( $name ) 
+		);
+		$query = Database::pQuery ( $sql, $args, true );
+		$this->fillNoticeVar ( $query );
 	}
 	public function setNotice($val) {
 		if (is_string ( $val )) {
