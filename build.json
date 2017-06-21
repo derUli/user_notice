@@ -3,5 +3,6 @@
    "version" : "0.9.0",
    "description" : "User Notice",
    "categories" : ["notice", "note", "memo", "organizer"],
-   "compatible_from" : "2017.3.9"
+   "compatible_from" : "2017.3.9",
+   "custom_acl" : ["user_notice"]
 }
