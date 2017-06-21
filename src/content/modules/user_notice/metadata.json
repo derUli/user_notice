@@ -5,5 +5,8 @@
 	"controllers" : {
 		"UserNotice" : "UserNotice.php"
 	},
-	"main_class" : "UserNotice"
+	"main_class" : "UserNotice",
+	"objects" : {
+		"UserNoticeData" : "objects/UserNoticeData.php"
+	}
 },
