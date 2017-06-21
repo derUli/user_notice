@@ -21,7 +21,7 @@ class UserNoticeDataTest extends PHPUnit_Framework_TestCase {
 		$this->assertNull ( $user->getNotice () );
 		$user->setNotice ( self::originalString );
 		$this->assertEquals ( self::filteredString, $user->getNotice () );
-		$this->save ();
+		$user->save ();
 		$user = new UserNoticeData ();
 		$user->loadByUsername ( "admin" );
 		$this->assertEquals ( self::filteredString, $user->getNotice () );
