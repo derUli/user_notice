@@ -1,7 +1,7 @@
 {
 	"source" : "extend",
 	"embed" : false,
-	"version" : "0.9.0",
+	"version" : "0.9.1",
 	"controllers" : {
 		"UserNotice" : "UserNotice.php"
 	},
