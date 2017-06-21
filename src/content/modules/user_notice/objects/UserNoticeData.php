@@ -7,7 +7,7 @@ class UserNoticeData extends User {
 	}
 	public function setNotice($val) {
 		if (is_string ( $val )) {
-			$this->notice = StringHelper::IsNotNullOrEmpty ( trim ( $this->notice ) ) ? strip_tags ( $val, self::allowableTags ) : null;
+			$this->notice = StringHelper::IsNotNullOrEmpty ( trim ( $val ) ) ? strip_tags ( $val, self::allowableTags ) : null;
 		} else {
 			$this->notice = null;
 		}
