@@ -7,9 +7,9 @@ class UserNoticeData extends User {
 	}
 	public function setNotice($val) {
 		if (is_string ( $val )) {
-			$trimmed = trim ( strip_tags ( $val, "<img><table><a>" ) );
-			if (StringHelper::isNotNullOrWhitespace ( $trimmed )) {
-				$this->notice = strip_tags ( $val, self::allowableTags );
+			$this->notice = strip_tags ( $val, self::allowableTags );
+			if (StringHelper::IsNullOrEmpty ( trim ( $this->notice ) )) {
+				$this->notice = null;
 			} else {
 				$this->notice = null;
 			}
