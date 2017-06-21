@@ -30,9 +30,13 @@ class UserNoticeData extends User {
 			$this->notice = null;
 		}
 	}
-	// Notice aus Query in Klassenvariable schreiben
 	private function fillNoticeVar($query) {
-		throw new NotImplementedException ();
+		if (Database::any ( $query )) {
+			$data = Database::fetchFirst ( $query );
+			$this->notice = $data->notice;
+		} else {
+			$this->notice = null;
+		}
 	}
 	public function insert() {
 		parent::insert ();
