@@ -37,7 +37,7 @@ if ($acl->hasPermission ( "user_notice" )) {
 		default :
 			?>
 		
-CKEDITOR.replace( 'page_content',
+CKEDITOR.replace( 'my_notes',
 					{
 						skin : '<?php
 			
