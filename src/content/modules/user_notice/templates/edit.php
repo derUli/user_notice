@@ -4,6 +4,7 @@ if ($acl->hasPermission ( "user_notice" )) {
 	$user = new UserNoticeData ( get_user_id () );
 	$note = $user->getNotice () ? strip_tags ( $user->getNotice (), UserNoticeData::allowableTags ) : "";
 	?>
+	<h2><?php translate("my_notes");?></h2>
 <form
 	action="<?php Template::escape(ModuleHelper::buildActionURL("edit_notice", "sClass=UserNotice&sMethod=save&tab=notes"));?>"
 	method="post">
