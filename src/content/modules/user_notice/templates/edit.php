@@ -20,6 +20,18 @@ if ($acl->hasPermission ( "user_notice" )) {
 	<?php
 	switch ($user->getHTMLEditor ()) {
 		case "codemirror" :
+			?>
+			CodeMirror.fromTextArea(document.getElementById("my_notes"),
+
+					{lineNumbers: true,
+					        matchBrackets: true,
+					        mode : "text/html",
+
+					        indentUnit: 0,
+					        indentWithTabs: false,
+					        enterMode: "keep",
+					        tabMode: "shift"});
+			<?php
 			break;
 		case "ckeditor" :
 		default :
