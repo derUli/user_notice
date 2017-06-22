@@ -8,7 +8,7 @@ if ($acl->hasPermission ( "user_notice" )) {
 	action="<?php Template::escape(ModuleHelper::buildActionURL("home", "sClass=UserNotice&sMethod=save&tab=notes"));?>"
 	method="post">
 	<p>
-		<textarea name="my_notes" id="my_notes"><?php Template::escape($note);?></textarea>
+		<textarea name="my_notes" id="my_notes" rows="20"><?php Template::escape($note);?></textarea>
 	</p>
 	<p>
 		<input type="submit" value="<?php translate("save");?>">
