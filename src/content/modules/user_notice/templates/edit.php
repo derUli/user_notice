@@ -4,7 +4,7 @@ if ($acl->hasPermission ( "user_notice" )) {
 	$user = new UserNoticeData ( get_user_id () );
 	$note = $user->getNotice () ? strip_tags ( $user->getNotice (), UserNoticeData::allowableTags ) : "";
 	?>
-	<h2><?php translate("my_notes");?></h2>
+<h2><?php translate("my_notes");?></h2>
 <form
 	action="<?php Template::escape(ModuleHelper::buildActionURL("edit_notice", "sClass=UserNotice&sMethod=save&tab=notes"));?>"
 	method="post">
@@ -15,7 +15,28 @@ if ($acl->hasPermission ( "user_notice" )) {
 		<input type="submit" value="<?php translate("save");?>">
 	</p>
 	<?php csrf_token_html();?>
-	<!-- @TODO: CKEditor oder CodeMirror für Textarea starten -->
+	<!-- CKEditor oder CodeMirror für Textarea starten -->
+	<script type="text/javascript">
+	<?php
+	switch ($user->getHTMLEditor ()) {
+		case "codemirror" :
+			break;
+		case "ckeditor" :
+		default :
+			?>
+		
+CKEDITOR.replace( 'page_content',
+					{
+						skin : '<?php
+			
+			echo Settings::get ( "ckeditor_skin" );
+			?>'
+					});<?php
+			break;
+			break;
+	}
+	?>
+</script>
 </form>
 <?php
 } else {
