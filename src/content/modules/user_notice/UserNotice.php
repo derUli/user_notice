@@ -13,6 +13,11 @@ class UserNotice extends Controller {
 		if (Request::getMethod () != "post" or ! is_logged_in () or ! $acl->hasPermission ( "user_notice" )) {
 			Request::redirect ( ModuleHelper::buildActionURL ( "edit_notice" ) );
 		}
+		$notes = StringHelper::isNotNullOrWhitespace ( Request::getVar ( "my_notes", "" ) ) ? Request::getVar ( "my_notes", "" ) : null;
+		
+		$user = new UserNoticeData ( get_user_id () );
+		$user->setNotice ( $notes );
+		$user->save ();
 		// @TODO: Speichern implementieren
 		Request::redirect ( ModuleHelper::buildActionURL ( "home", "tab=notes" ) );
 	}
