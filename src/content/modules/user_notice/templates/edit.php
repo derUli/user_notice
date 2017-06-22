@@ -7,7 +7,7 @@ if ($acl->hasPermission ( "user_notice" )) {
 	?>
 <form action="#" method="post">
 	<p>
-		<textarea><?php Template::escape($note);?></textarea>
+		<textarea name="my_notes" id="my_notes"><?php Template::escape($note);?></textarea>
 	</p>
 	<p>
 		<input type="submit" value="<?php translate("save");?>">
