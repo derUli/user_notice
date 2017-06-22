@@ -16,6 +16,6 @@ if ($acl->hasPermission ( "user_notice" )) {
 	</p>
 </div>
 <?php if(Request::getVar("tab") == "notes"){?>
-<script type="text/javascript">$("#tab-notes").click();</script>
+<script type="text/javascript">$(function(){$("#tab-notes").click();});</script>
 <?php }?>
 <?php }?>
