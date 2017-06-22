@@ -8,5 +8,9 @@ class UserNotice extends Controller {
 	public function accordionLayout() {
 		echo Template::executeModuleTemplate ( $this->moduleName, "dashboard.php" );
 	}
+	public function save() {
+		// @TODO: Speichern implementieren
+		Request::redirect ( ModuleHelper::buildActionURL ( "home", "tab=notes" ) );
+	}
 }
 	
