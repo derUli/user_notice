@@ -14,7 +14,7 @@ if ($acl->hasPermission ( "user_notice" )) {
 	?><br />
 	<br />
 	<p>
-		[<a href="#"><?php translate("edit");?></a>]
+		[<a href="<?php Template::escape(ModuleHelper::buildActionURL("edit_notice"))?>"><?php translate("edit");?></a>]
 	</p>
 </div>
 <?php }?>
