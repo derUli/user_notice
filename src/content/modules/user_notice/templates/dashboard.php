@@ -8,7 +8,7 @@ if ($acl->hasPermission ( "user_notice" )) {
 <?php
 	if (StringHelper::isNotNullOrWhitespace ( $note )) {
 		echo $note;
-		?><br /> <br />
+		?>
 	<?php }?>
 	<p>
 		[<a
