@@ -1,9 +1,9 @@
 <?php
-$acl = new ACL ();
-if ($acl->hasPermission ( "user_notice" )) {
-	$user = new UserNoticeData ( get_user_id () );
-	$note = $user->getNotice () ? strip_tags ( $user->getNotice (), UserNoticeData::allowableTags ) : "";
-	?>
+$acl = new ACL();
+if ($acl->hasPermission("user_notice")) {
+    $user = new UserNoticeData(get_user_id());
+    $note = $user->getNotice() ? strip_tags($user->getNotice(), UserNoticeData::allowableTags) : "";
+    ?>
 <h2><?php translate("my_notes");?></h2>
 <form
 	action="<?php Template::escape(ModuleHelper::buildActionURL("edit_notice", "sClass=UserNotice&sMethod=save&tab=notes"));?>"
@@ -12,15 +12,15 @@ if ($acl->hasPermission ( "user_notice" )) {
 		<textarea name="my_notes" id="my_notes" rows="20"><?php Template::escape($note);?></textarea>
 	</p>
 	<p>
-		<input type="submit" value="<?php translate("save");?>">
+		<button type="submit" class="btn btn-success"><?php translate("save");?></button>
 	</p>
 	<?php csrf_token_html();?>
 	<!-- CKEditor oder CodeMirror für Textarea starten -->
 	<script type="text/javascript">
 	<?php
-	switch ($user->getHTMLEditor ()) {
-		case "codemirror" :
-			?>
+    switch ($user->getHTMLEditor()) {
+        case "codemirror":
+            ?>
 			CodeMirror.fromTextArea(document.getElementById("my_notes"),
 
 					{lineNumbers: true,
@@ -32,25 +32,25 @@ if ($acl->hasPermission ( "user_notice" )) {
 					        enterMode: "keep",
 					        tabMode: "shift"});
 			<?php
-			break;
-		case "ckeditor" :
-		default :
-			?>
+            break;
+        case "ckeditor":
+        default:
+            ?>
 		
 CKEDITOR.replace( 'my_notes',
 					{
 						skin : '<?php
-			
-			echo Settings::get ( "ckeditor_skin" );
-			?>'
+            
+            echo Settings::get("ckeditor_skin");
+            ?>'
 					});<?php
-			break;
-			break;
-	}
-	?>
+            break;
+            break;
+    }
+    ?>
 </script>
 </form>
 <?php
 } else {
-	noperms ();
+    noperms();
 }
