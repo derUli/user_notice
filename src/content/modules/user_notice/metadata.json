@@ -1,19 +1,21 @@
 {
-	"source" : "extend",
-	"embed" : false,
-	"version" : "0.9.6",
-	"controllers" : {
-		"UserNotice" : "UserNotice.php"
+	"source": "extend",
+	"embed": false,
+	"version": "0.9.7",
+	"controllers": {
+		"UserNotice": "UserNotice.php"
 	},
-	"main_class" : "UserNotice",
-	"objects" : {
-		"UserNoticeData" : "objects/UserNoticeData.php"
+	"main_class": "UserNotice",
+	"objects": {
+		"UserNoticeData": "objects/UserNoticeData.php"
 	},
-   "custom_acl" : ["user_notice"],
-   "actions" : {
-   		"edit_notice" : "templates/edit.php"
-   },
-   "action_controllers" : {
-   		"edit_notice" : "UserNotice"
-   }
+	"custom_acl": [
+		"user_notice"
+	],
+	"actions": {
+		"edit_notice": "templates/edit.php"
+	},
+	"action_controllers": {
+		"edit_notice": "UserNotice"
+	}
 }
