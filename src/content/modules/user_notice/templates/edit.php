@@ -12,7 +12,7 @@ if ($acl->hasPermission("user_notice")) {
 		<textarea name="my_notes" id="my_notes" rows="20"><?php Template::escape($note);?></textarea>
 	</p>
 	<p>
-		<button type="submit" class="btn btn-success"><?php translate("save");?></button>
+		<button type="submit" class="btn btn-primary"><i class="far fa-save"></i> <?php translate("save");?></button>
 	</p>
 	<?php csrf_token_html();?>
 	<!-- CKEditor oder CodeMirror für Textarea starten -->
