@@ -13,7 +13,7 @@ if ($acl->hasPermission("user_notice")) {
 	<?php }?>
 	<p>
 		<a
-			href="<?php Template::escape(ModuleHelper::buildActionURL("edit_notice"))?>" class="btn btn-default"><i class="far fa-edit"></i> <?php translate("edit");?></a>
+			href="<?php Template::escape(ModuleHelper::buildActionURL("edit_notice"))?>" class="btn btn-primary"><i class="far fa-edit"></i> <?php translate("edit");?></a>
 	</p>
 </div>
 <?php if(Request::getVar("tab") == "notes"){?>
