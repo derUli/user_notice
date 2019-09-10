@@ -9,12 +9,12 @@ class UserNoticeData extends User {
 		parent::loadById ( $id );
 		$sql = "select notice from {prefix}users where id = ?";
 		$args = array (
-				intval ( $id ) 
+				intval ( $id )
 		);
 		$query = Database::pQuery ( $sql, $args, true );
 		$this->fillNoticeVar ( $query );
 	}
-	public function loadByUsername($name) {
+	public function loadByUsername(string $name): void {
 		parent::loadByUsername ( $name );
 		$sql = "select notice from {prefix}users where username = ?";
 		$args = array (
