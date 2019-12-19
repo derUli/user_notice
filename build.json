@@ -3,5 +3,5 @@
    "version" : "1.1",
    "description" : "User Notice",
    "categories" : ["notice", "note", "memo", "organizer"],
-   "compatible_from" : "2020.1"
+   "compatible_from" : "2019.4.2"
 }
