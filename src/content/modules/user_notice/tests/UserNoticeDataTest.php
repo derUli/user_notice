@@ -1,5 +1,5 @@
 <?php
-class UserNoticeDataTest extends PHPUnit_Framework_TestCase {
+class UserNoticeDataTest extends \PHPUnit\Framework\TestCase {
 	const originalString = "<p>test<script>alert('xss')</script></p>";
 	const filteredString = "<p>testalert('xss')</p>";
 	public function setUp() {

@@ -1,7 +1,7 @@
 {
    "id" : "user_notice",
-   "version" : "1.0",
+   "version" : "1.1",
    "description" : "User Notice",
    "categories" : ["notice", "note", "memo", "organizer"],
-   "compatible_from" : "2019.3.1"
+   "compatible_from" : "2020.1"
 }
