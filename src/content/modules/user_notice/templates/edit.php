@@ -24,28 +24,33 @@ if ($acl->hasPermission("user_notice")) {
     switch ($user->getHTMLEditor()) {
         case "codemirror":
             ?>
-                    CodeMirror.fromTextArea(document.getElementById("my_notes"),
-                            {lineNumbers: true,
+                    CodeMirror.fromTextArea(
+                            document.getElementById("my_notes"),
+                            {
+                                lineNumbers: true,
                                 matchBrackets: true,
                                 mode: "text/html",
-
                                 indentUnit: 0,
                                 indentWithTabs: false,
                                 enterMode: "keep",
-                                tabMode: "shift"});
+                                tabMode: "shift"
+                            }
+                    );
             <?php
             break;
         case "ckeditor":
         default:
             ?>
 
-                    CKEDITOR.replace('my_notes',
+                    CKEDITOR.replace(
+                            'my_notes',
                             {
                                 skin: '<?php
             echo Settings::get("ckeditor_skin");
             ?>'
-                            });<?php
-            break;
+                            }
+                    );
+            <?php
             break;
     }
     ?>

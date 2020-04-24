@@ -15,7 +15,7 @@ class UserNotice extends Controller {
 
     public function save() {
         $acl = new ACL ();
-        if (Request::getMethod() != "post" or ! is_logged_in() or ! $acl->hasPermission("user_notice")) {
+        if (Request::getMethod() != "post" or!is_logged_in() or!$acl->hasPermission("user_notice")) {
             Request::redirect(ModuleHelper::buildActionURL("edit_notice"));
         }
         $notes = StringHelper::isNotNullOrWhitespace(Request::getVar("my_notes", "")) ? Request::getVar("my_notes", "") : null;

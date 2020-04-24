@@ -1,21 +1,21 @@
 {
-	"source": "extend",
-	"embed": false,
-	"version": "1.1",
-	"controllers": {
-		"UserNotice": "UserNotice.php"
-	},
-	"main_class": "UserNotice",
-	"objects": {
-		"UserNoticeData": "objects/UserNoticeData.php"
-	},
-	"custom_acl": [
-		"user_notice"
-	],
-	"actions": {
-		"edit_notice": "templates/edit.php"
-	},
-	"action_controllers": {
-		"edit_notice": "UserNotice"
-	}
+    "source": "extend",
+    "embed": false,
+    "version": "1.2",
+    "controllers": {
+        "UserNotice": "UserNotice.php"
+    },
+    "main_class": "UserNotice",
+    "objects": {
+        "UserNoticeData": "objects/UserNoticeData.php"
+    },
+    "custom_acl": [
+        "user_notice"
+    ],
+    "actions": {
+        "edit_notice": "templates/edit.php"
+    },
+    "action_controllers": {
+        "edit_notice": "UserNotice"
+    }
 }

@@ -11,15 +11,20 @@ if ($acl->hasPermission("user_notice")) {
             echo $note;
             ?>
         <?php } ?>
-        <p>
+        <div class="voffset1">
             <a
-                href="<?php Template::escape(ModuleHelper::buildActionURL("edit_notice")) ?>" class="btn btn-primary"><i class="far fa-edit"></i> <?php translate("edit"); ?></a>
-        </p>
+                href="<?php Template::escape(ModuleHelper::buildActionURL("edit_notice")) ?>"
+                class="btn btn-primary"
+                >
+                <i class="far fa-edit"></i> 
+                <?php translate("edit"); ?>
+            </a>
+        </div>
     </div>
     <?php if (Request::getVar("tab") == "notes") { ?>
         <script type="text/javascript">$(function () {
                 $("#tab-notes").click();
             });</script>
-    <?php } ?>
-    <?php
-}?>
+        <?php
+    }
+}
