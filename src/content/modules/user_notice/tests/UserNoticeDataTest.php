@@ -7,7 +7,7 @@ class UserNoticeDataTest extends \PHPUnit\Framework\TestCase {
 
     private $user;
 
-    public function setUp() {
+    protected function setUp(): void {
         $user = new User();
         $user->setUsername("test_user");
         $user->setFirstname("Max");
@@ -20,7 +20,7 @@ class UserNoticeDataTest extends \PHPUnit\Framework\TestCase {
         $this->user = $user;
     }
 
-    public function tearDown() {
+    protected function tearDown(): void {
         $sql = "update {prefix}users set notice = ? where notice = ? or notice = ?";
         $args = array(
             null,
